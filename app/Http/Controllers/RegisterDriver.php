@@ -57,18 +57,16 @@ class RegisterDriver extends Controller
 			}
 	}
 
-	public function login(){
+	public function login(Request $request){
 		 $email=$request->email;
 	   	 $password=$request->password;
 
-    if (Auth::attempt(['email' => $email, 'password' => $password, 'verified' => 1])) {
-				return redirect('/')->with('message', 'Logged In Successfully!');
+	   	$record = Driver::where('driver_email',$email)->first();
 
-		   }
-    else{
-			return redirect('/login')->with('message', 'Logged In Failed!');    	
+	   	if($record->password==PASSWORD_VERIFY($password),DEFAULT_PASSWORD)
+    {
+    	
     }
-
 	}
 
 

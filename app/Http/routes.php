@@ -31,6 +31,11 @@ Route::post('/login-submit',[
 		 'as'=>'l.submit',
 	]);
 
+Route::post('/login-driver',[
+		'uses'=>'RegisterDriver@login',
+		 'as'=>'D.submit',
+	]);
+
 Route::post('register/otp','UserController@register');
 
 Route::post('regiter/otpverify','OtpController@VerifySMS');

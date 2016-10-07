@@ -1,5 +1,3 @@
-<!--hello-->
-
 <!doctype html>
 <html>
 
@@ -196,7 +194,7 @@
 <div class="cp-reservation-box cp-login-box">
 <h3>Please enter to Login</h3>
 
-{!! Form::open(array('action' => 'RegisterDriver@login')) !!}
+{!! Form::open(array('url' => 'login-driver')) !!}
     <div class="inner-holder">
       <label>Enter Your Username</label>
       <input type="text" name="email" placeholder="Email Address">
